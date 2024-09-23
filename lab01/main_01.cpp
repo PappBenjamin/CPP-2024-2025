@@ -1,8 +1,7 @@
 #include "lab01.h"
+#include "extra.h"
 
 int main()
 {
-    std::istringstream input("5.6 abc 7.8 9 foo 1.1");
-    stringOne(input);
-    return 0;
+    printNWord((string &) "bible.txt", 1);
 }

@@ -23,10 +23,4 @@ string code(string text); // 3
 string decode(string text); // 3.1
 string capitalizeWords(string text); // 4
 
-
-
-
-
-
-
 #endif //LAB1_LAB01_H

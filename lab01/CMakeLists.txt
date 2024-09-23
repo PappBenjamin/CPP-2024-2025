@@ -1,4 +1,6 @@
 project(lab1)
 add_executable(lab1 main_01.cpp
         lab01.cpp
-        lab01.h)
+        lab01.h
+        extra.cpp
+        extra.h)
