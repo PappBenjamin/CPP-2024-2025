@@ -12,28 +12,27 @@ void printNWord(string &fileName, int n)
     {
         transform(word.begin(), word.end(), word.begin(),::tolower);
 
-        for(int i = 0; i <= word.length(); ++i)
+        for(int i = 0; i < word.length(); ++i)
         {
-            if(!isalpha(word[i])){word.erase(i, 1);}
+            if(!isalpha(word[i])){word.erase(i);}
         }
+
         bibleWords[word]++;
     }
 
     vector< pair<string, int> > bibleWordsVector(bibleWords.begin(), bibleWords.end());
     sort(bibleWordsVector.begin(), bibleWordsVector.end(), compare);
 
-    for (int i = 0; i < bibleWordsVector.size(); ++i)
+    for (int i = 0; i < n; ++i)
     {
-        cout << bibleWordsVector[i].first << endl;
+        cout << bibleWordsVector[i].first << ": " << bibleWordsVector[i].second << endl;
     }
 
-
-    cout << "Your " << n << "th common word was: " << bibleWordsVector[n].first << " (" << bibleWordsVector[n].second <<")";
+    cout << "Your " << n << "th common word was: " << bibleWordsVector[n - 1].first << " (" << bibleWordsVector[n - 1].second <<")";
 
 }
 
 bool compare(pair <string, int> a, pair <string, int> b)
 {
-    if(a.second > b.second){return true;}
-    if(a.second < b.second){return false;}
+    return a.second > b.second;
 }

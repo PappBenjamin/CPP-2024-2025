@@ -3,5 +3,5 @@
 
 int main()
 {
-    printNWord((string &) "bible.txt", 1);
+    printNWord((string &) "bible.txt", 10);
 }
