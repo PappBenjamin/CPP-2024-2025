@@ -69,4 +69,55 @@ point *createArray(int numPoints)
     return array;
 }
 
+pair<point, point> closestpoints(point* points, int numpoints)
+{
+
+    double minFinal = 9999;
+
+    pair<point,point> minPoints;
+
+    int indexJ;
+    int indexI;
+
+    for(int i = 0; i < numpoints; ++i)
+    {
+        double minDist = 999;
+        indexI = i;
+
+        for(int j = i + 1; j < numpoints; ++j)
+        {
+            double dist = distance(points[i],points[j]);
+
+            if(dist < minDist)
+            {
+                minDist = dist;
+                indexJ = j;
+            }
+        }
+
+        if(minDist < minFinal)
+        {
+            minFinal = minDist;
+            minPoints = make_pair(points[indexI],points[indexJ]);
+        }
+    }
+    return minPoints;
+}
+
+void sortPoints(point *points, int numpoints)
+{
+    vector<point> v(points,points+numpoints);
+    sort(v.begin(),v.end(),cmp2);
+
+    for(int i = 0; i < numpoints; ++i)
+    {
+        cout << v[i].getX() << " " << v[i].getY() << endl;
+    }
+
+}
+bool cmp2(point &a, point &b)
+{
+    return a.getX() < b.getX();
+}
+
 

@@ -18,10 +18,16 @@ int main(int argc, char** argv)
     delete pp1;
     delete pp2;
 
-    cout << distance(p1,p2) << endl;
-    cout << isSquare(p1,p2,*pp1,*pp2);
+    ////////////////////////////////////////////////////////////////
 
-    createArray(500);
+    cout << "Distance: " <<  distance(p1,p2) << endl;
 
-    return 0;
+    // cout << isSquare(p1,p2,*pp1,*pp2);
+
+    point*points = createArray(500);
+    pair<point,point> minPoints = closestpoints(points,500);
+
+    cout<<"The closest points are: ("<<minPoints.first.getX()<<","<< minPoints.first.getY() <<") and ("<<minPoints.second.getX()<<","<<minPoints.second.getY()<<")"<<endl;
+
+    sortPoints(points,500);
 }

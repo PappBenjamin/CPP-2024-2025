@@ -1,5 +1,5 @@
-#ifndef LAB2_POINT_H
-#define LAB2_POINT_H
+#ifndef LAB2_point_H
+#define LAB2_point_H
 
 #include <iostream>
 #include <string>
@@ -14,17 +14,21 @@ class point{
 private:
     int x, y;
 public:
-    point( int x=0, int y=0);
+    explicit point( int x=0, int y=0);
 
     int getX() const;
     int getY() const;
     void print(const string &prefix, const string &suffix) const;
-
 };
 
 double distance(const point& a, const point& b);
+
 bool isSquare(const point& a, const point& b, const point& c, const point& d);
-point* createArray(int numPoints);
 
+point* createArray(int numpoints);
 
-#endif //LAB2_POINT_H
+pair<point, point> closestpoints(point* points, int numpoints);
+
+bool cmp2( point& a,point& b);
+void sortPoints(point* points, int numpoints);
+#endif //LAB2_point_H
