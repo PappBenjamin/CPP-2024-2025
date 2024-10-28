@@ -21,7 +21,7 @@ public:
     /////////////////////CONSTRUCTORS/////////////////////////
 
     Question(string text);
-    Question(){this->text = "";};
+    Question(){};
 
 
     /////////////////////GETTERS AND SETTERS/////////////////////
@@ -39,6 +39,8 @@ public:
 
 
     void clearAnswers();
+    void printQuestion();
+    void printAnswers();
 };
 
 

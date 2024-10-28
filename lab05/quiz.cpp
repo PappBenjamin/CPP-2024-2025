@@ -1,11 +1,13 @@
 #include "quiz.h"
 
+
+//////////////CONSTRUCTORS///////////////
+
 quiz::quiz(string &name)
 {
     this->name = name;
 }
-
-quiz::quiz(string & name, const string &fname)
+quiz::quiz(string &  name, const string &fname)
 {
     this->name = name;
 
@@ -33,6 +35,7 @@ quiz::quiz(string & name, const string &fname)
             questTemp.setText(temp.substr(2));
             continue;
         }
+
         if(temp2 == "A")
         {
 
@@ -51,6 +54,22 @@ quiz::quiz(string & name, const string &fname)
         this->questions.push_back(questTemp);
     }
 }
+quiz::quiz() {}
+
+
+
+/////////////GETTERS///////////////
+string quiz::getName()
+{
+    return this->name;
+}
+
+vector<Question> quiz::getQuestions()
+{
+    return this->questions;
+}
+
+/////////////FUNCTIONS///////////////
 
 void quiz:: printQuiz()
 {
@@ -69,4 +88,3 @@ void quiz:: printQuiz()
         cout << endl;
     }
 }
-

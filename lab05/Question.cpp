@@ -56,5 +56,16 @@ void Question::clearAnswers()
 {
     this->answers.clear();
 }
+void Question:: printQuestion()
+{
+   cout << this->text << endl;
+}
+void Question:: printAnswers()
+{
+    for(int i = 0; i < this->answers.size(); i++)
+    {
+        cout << "\t" << this->answers[i].getText() << endl;
+    }
+}
 
 

@@ -1,5 +1,5 @@
 #include <iostream>
-#include "quiz.h"
+#include "QuizGame.h"
 using namespace std;
 
 
@@ -10,5 +10,11 @@ int main()
     string filename = "in.txt";
 
     quiz q(name, filename);
-    q.printQuiz();
+//    q.printQuiz();
+
+
+    //////////TESTS///////////
+
+    QuizGame qg(q);
+    qg.startGame();
 }

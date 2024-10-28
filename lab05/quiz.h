@@ -19,9 +19,20 @@ private:
     vector<Question> questions;
 
 public:
+
+    ///////////////CONSTRUCTORS///////////////
     quiz(string &name);
     quiz(string & name, const string &fname);
+    quiz();
+
+    ///////////////GETTERS///////////////
+    string getName();
+    vector<Question> getQuestions();
+
+    ///////////////FUNCTIONS///////////////
+
     void printQuiz();
+
 };
 
 
