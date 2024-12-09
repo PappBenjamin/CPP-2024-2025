@@ -7,7 +7,7 @@ Index::Index(const string &filename)
     if (file.is_open())
     {
         string line;
-        int count = 0;
+        int count = 0; // sorok szama
 
         while (getline(file, line))
         {
